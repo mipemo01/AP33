@@ -1,0 +1,6 @@
+grep -A 6 -B 2 "EDIFICIO" consumos.txt > file1
+grep -A 5 -B 5 "EDIFICIO A" file1 | grep -v "\*" > a
+grep -A 5 -B 1 "EDIFICIO D" file1 | grep -v "\*" > d
+grep "L.*M.*X.*J.*V" consumos.txt > file2
+grep -v "\*" totales.txt >> file2
+awk '{if ($2 < 200 && $3 < 200 && $4 < 200 && $5 < 200 && $6 < 200) print $0}' totales.txt > semanas_sin_200.txt
